@@ -1,0 +1,356 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.Marron{
+    accent-color: rgb(165, 83, 42);
+}
+.Rose{
+    accent-color: rgb(213, 133, 146);
+}
+.Violet{
+    accent-color: rgb(211, 25, 211);
+    
+}
+.Orange{
+    accent-color: rgb(227, 149, 14);
+}
+.Jaune{
+    accent-color: rgb(167, 167, 37);
+    
+}
+.Vert{
+    accent-color: green;
+}
+.Bleu{
+    accent-color: blue;
+}
+.Rouge{
+    accent-color: red;
+}
+
+.CouleurMarron{
+    color: rgb(165, 83, 42);
+}
+.CouleurRose{
+    color: rgb(213, 133, 146);
+}
+.CouleurViolet{
+   color: rgb(211, 25, 211);
+    
+}
+.CouleurOrange{
+    color: rgb(227, 149, 14);
+}
+.CouleurJaune{
+    color: rgb(167, 167, 37);
+    
+}
+.CouleurVert{
+    color: green;
+}
+.CouleurBleu{
+    color: blue;
+}
+.CouleurRouge{
+    color: red;
+}
+
+#home {
+    clip-path: url(#cache);
+  }
+  
+  #red {
+    fill: none;
+    opacity: 0.15;
+    stroke: #CE1B5F;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+  }
+  
+  #blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  #light-blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 6;
+    stroke-miterlimit:10;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 800;
+    animation: draw 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;    
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+   }
+      }
+  
+  @keyframes show {
+    0% {
+      opacity: 0.15;
+   }
+    50% {
+      opacity: 0.2;
+   }
+    100% {
+      opacity: 0.15;
+   }
+      }
+  
+  body {
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Couleur de fond pour le contraste */
+    position: relative;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+    z-index: 2;
+  }
+  
+  svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Assure que le SVG est en arrière-plan */
+    display: block; /* Élimine l'espace blanc sous l'élément */
+  }
+  
+  .ChoixModeJeux, .CouleursJoueur1, .CouleursJoueur2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevent content overflow */
+  }
+
+  .CouleursJoueur1 {
+    display: none; /* Caché par défaut, sera affiché via JavaScript */
+  }
+
+  .CouleursJoueur2 {
+    display: none; /* Caché par défaut, sera affiché via JavaScript */
+  }
+
+  .Essais {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: none; /* Caché par défaut, sera affiché via JavaScript */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #444;
+    width: 100%;
+  }
+  #bouttonAide{
+    align-items: center;
+    display: flex;
+    margin-left:45%;
+  }
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #06A1C4;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #CE1B5F;
+  }
+
+  #bouttonJoueur1, #bouttonJoueur2 {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  .PremierCouleur, .SecondCouleur, .TroisiemeCouleur, .QuatriemeCouleur {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input[type="radio"] {
+    vertical-align: middle;
+    margin: 0;
+    margin-right: 2px;
+    position: relative;
+    top: -3px;
+  }
+
+  label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  label input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  .Essais p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ChoixModeJeux, .CouleursJoueur1, .CouleursJoueur2 {
+      width: 95%;
+      padding: 15px;
+    }
+    
+    form {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    input[type="radio"] {
+      width: 12px;
+      height: 12px;
+      margin: 0;
+      margin-right: 2px;
+      vertical-align: middle;
+      position: relative;
+      top: -3px;
+    }
+    
+    label {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 8px;
+      font-size: 0.7rem;
+      vertical-align: middle;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+      top: 10px;
+    }
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+    
+    .Essais {
+      width: 95%;
+      bottom: 10px;
+      padding: 8px 15px;
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    input[type="radio"] {
+      width: 8px;
+      height: 8px;
+      margin: 0;
+      margin-right: 1px;
+      vertical-align: middle;
+      position: relative;
+      top: -3px;
+    }
+    
+    label {
+      display: inline-block;
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 6px;
+      vertical-align: middle;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    h2 {
+      font-size: 1.2rem;
+    }
+    
+    button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
