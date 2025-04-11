@@ -165,3 +165,10 @@ function Rejouer() {
 
 
 
+module.exports = {
+    CodeSecretJoueur1,
+    CodeSecretJoueur2,
+    CodeCouleurIA,
+    FinDePartie,
+    Rejouer
+}
